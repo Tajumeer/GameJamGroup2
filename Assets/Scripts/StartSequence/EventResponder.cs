@@ -54,6 +54,8 @@ namespace Events
 
         [SerializeField]
         private List<EventEntry> m_correctEventOrder = new List<EventEntry>();
+        [SerializeField]
+        private List<GameObject> m_interactableObjects = new List<GameObject>();
         private AudioSource m_audioSource = null;
         private event System.Action m_onAllEventsCleared;
 
@@ -66,7 +68,7 @@ namespace Events
 
         private void Start()
         {
-            IInteractable[] interactables = GameObject.FindObjectsOfType<GameObject>()
+            IInteractable[] interactables = m_interactableObjects
                                                         .Select(o => o.GetComponent<IInteractable>())
                                                         .Where(o => o != null)
                                                         .ToArray();
@@ -157,7 +159,7 @@ namespace Events
 
             EventEntry entry = m_correctEventOrder[m_currentIndex];
 
-            if (entry.Object != _minigame.Owner || entry.Type != EEventType.INTERACT)
+            if (entry.Object != _minigame.Owner || entry.Type != EEventType.MINIGAME)
                 return;
 
             EventCompleted();

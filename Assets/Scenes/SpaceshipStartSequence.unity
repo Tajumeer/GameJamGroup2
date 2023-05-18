@@ -234,6 +234,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5145269110013076924, guid: d84b4a0c984a5bb4499be48e8f50a5d9, type: 3}
   m_PrefabInstance: {fileID: 92382506}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &119930607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5145269110013076924, guid: d84b4a0c984a5bb4499be48e8f50a5d9, type: 3}
+  m_PrefabInstance: {fileID: 220493415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &174871391
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +327,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 5
+      value: 2
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -331,16 +336,16 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 3
-      inSlope: -2
-      outSlope: -2
+      value: 1
+      inSlope: -0.75
+      outSlope: -0.75
       tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 2
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -1512,6 +1517,24 @@ MonoBehaviour:
   - m_object: {fileID: 174871391}
     m_eventType: 3
     m_data: {fileID: 0}
+  m_interactableObjects:
+  - {fileID: 617623009}
+  - {fileID: 1777602396}
+  - {fileID: 1805353612}
+  - {fileID: 534162321}
+  - {fileID: 1630569683}
+  - {fileID: 1049075024}
+  - {fileID: 1738695550}
+  - {fileID: 1862411077}
+  - {fileID: 86125864}
+  - {fileID: 591956131}
+  - {fileID: 92382508}
+  - {fileID: 1171392318}
+  - {fileID: 2118216980}
+  - {fileID: 265337402}
+  - {fileID: 529891660}
+  - {fileID: 119930607}
+  - {fileID: 1843993872}
 --- !u!4 &1089642581
 Transform:
   m_ObjectHideFlags: 0

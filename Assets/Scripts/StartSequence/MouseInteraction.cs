@@ -27,7 +27,6 @@ namespace StartSequence
             if (interactable == null)
                 return;
 
-            Debug.DrawLine(hit.transform.position, hit.transform.position + Vector3.up);
             if (isClicking)
             {
                 interactable.Interact();

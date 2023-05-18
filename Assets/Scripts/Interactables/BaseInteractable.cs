@@ -81,6 +81,14 @@ namespace Interactables
         protected bool m_isHovered = false;
         protected bool m_wasHoveredLastFrame = false;
 
+        private void OnValidate()
+        {
+            if (m_dataAsset == null)
+                return;
+
+            this.gameObject.name = m_dataAsset.ObjectName;
+        }
+
         private void Awake()
         {
             m_audioSource = GetComponent<AudioSource>();
@@ -120,7 +128,7 @@ namespace Interactables
 
             m_onHoverStart?.Invoke(this);
 
-            Subtitles.Instance.DisplayText(m_dataAsset.ObjectName);
+            // Subtitles.Instance.DisplayText(m_dataAsset.ObjectName);
 
             return true;
         }

@@ -157,5 +157,10 @@ namespace Interactables
 
             return true;
         }
+
+        public void UpdateData(InteractableAsset _asset)
+        {
+            m_dataAsset = _asset;
+        }
     }
 }

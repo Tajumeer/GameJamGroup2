@@ -57,5 +57,7 @@ namespace Interactables
 
         public bool InteractionSuccesful();
         public bool InteractionWrong();
+
+        public void UpdateData(InteractableAsset _asset);
     }
 }

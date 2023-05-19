@@ -471,11 +471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a033dee1bb18e42a48048a9bd7313b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_gravitySlider: {fileID: 1074598907}
   m_rotationSlider: {fileID: 1942283101}
   m_hangar: {fileID: 711021894}
   m_lerpSpeed: 360
-  m_gravityMultiplier: 2.5
+  m_gravitySlider: {fileID: 1074598907}
 --- !u!4 &314635896
 Transform:
   m_ObjectHideFlags: 0
@@ -1433,8 +1432,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1340220309}
   m_HandleRect: {fileID: 613080006}
   m_Direction: 2
-  m_MinValue: -1
-  m_MaxValue: 1
+  m_MinValue: -100
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

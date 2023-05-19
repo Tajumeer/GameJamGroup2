@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4617692ba76f49b4996e54b609fb3645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fadeOutDelay: 5
+  m_fadeOutDelay: 2
 --- !u!114 &490462335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,13 +1615,13 @@ MonoBehaviour:
     m_object: {fileID: 174871391}
     m_data: {fileID: 0}
   - m_action: {fileID: 11400000, guid: de1084aad77525f47881595d1677110f, type: 2}
-    m_object: {fileID: 0}
+    m_object: {fileID: 942011246}
     m_data: {fileID: 11400000, guid: 7e2b399e69e21544da4a0ac162eb1e17, type: 2}
   - m_action: {fileID: 11400000, guid: 3e00cac2fa2b1d145b7a64c4395eb95c, type: 2}
     m_object: {fileID: 0}
     m_data: {fileID: 11400000, guid: 8f14dcb4a27517f4b950a4870e648886, type: 2}
   - m_action: {fileID: 11400000, guid: 5e36ff81e0b3119458de73d16efde016, type: 2}
-    m_object: {fileID: 942011246}
+    m_object: {fileID: 0}
     m_data: {fileID: 11400000, guid: 4a5d9c52176368a47808767fc1a60f7e, type: 2}
   m_interactableObjects:
   - {fileID: 617623009}
@@ -2228,11 +2228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145269110013076922, guid: d84b4a0c984a5bb4499be48e8f50a5d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.34
+      value: -6.11
       objectReference: {fileID: 0}
     - target: {fileID: 5145269110013076922, guid: d84b4a0c984a5bb4499be48e8f50a5d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.04
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 5145269110013076922, guid: d84b4a0c984a5bb4499be48e8f50a5d9, type: 3}
       propertyPath: m_LocalPosition.z

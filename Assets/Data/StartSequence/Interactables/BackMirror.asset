@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_objectName: Back mirror
-  m_description: No description
+  m_description: Objects in the mirror may seem larger than usual.
   m_hoverSound: {fileID: 0}
   m_wrongInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: There's a time and place for everything, but not now.
+    m_text: I can see my self in this thing!
   m_succesfulInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: My best start form signing pen!
+    m_text: That's right! The cargo is in the back.

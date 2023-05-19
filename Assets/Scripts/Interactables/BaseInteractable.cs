@@ -1,3 +1,5 @@
+using StartSequence.UI;
+using System.Linq;
 using UI;
 using UnityEngine;
 
@@ -5,7 +7,7 @@ namespace Interactables
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(AudioSource))]
-    public class BaseInteractable : MonoBehaviour, IInteractable
+    public class BaseInteractable : MonoBehaviour, IInteractable, IHoverable, IInteractionDataUser
     {
 
         public event System.Action<IInteractable> OnInteract
@@ -60,13 +62,11 @@ namespace Interactables
             }
         }
 
-        public string Description => m_dataAsset.Description;
-
-        public string Name => m_dataAsset.ObjectName;
-
         public bool IsHovered { get => m_isHovered; set => m_isHovered = value; }
 
         public GameObject Owner => this.gameObject;
+
+        public InteractableAsset DataAsset { get => m_dataAsset; set => m_dataAsset = value; }
 
         [SerializeField]
         protected InteractableAsset m_dataAsset = null;
@@ -81,17 +81,28 @@ namespace Interactables
         protected bool m_isHovered = false;
         protected bool m_wasHoveredLastFrame = false;
 
+        protected IHoverTextDisplay m_hoverTextDisplay;
+        protected IInteractionTextDisplay m_interactionTextDisplay;
+
         private void OnValidate()
         {
-            if (m_dataAsset == null)
+            if (DataAsset == null)
                 return;
 
-            this.gameObject.name = m_dataAsset.ObjectName;
+            this.gameObject.name = DataAsset.ObjectName;
         }
 
         private void Awake()
         {
             m_audioSource = GetComponent<AudioSource>();
+
+            m_hoverTextDisplay = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+                                                .OfType<IHoverTextDisplay>()
+                                                .FirstOrDefault();
+
+            m_interactionTextDisplay = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+                                                .OfType<IInteractionTextDisplay>()
+                                                .FirstOrDefault();
         }
 
         private void Update()
@@ -123,12 +134,12 @@ namespace Interactables
 
         public bool HoverStart()
         {
-            m_audioSource.clip = m_dataAsset.HoverSound;
+            m_audioSource.clip = DataAsset.HoverSound;
             m_audioSource.Play();
 
             m_onHoverStart?.Invoke(this);
 
-            // Subtitles.Instance.DisplayText(m_dataAsset.ObjectName);
+            m_hoverTextDisplay.RequestUpdateHoverText(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
 
             return true;
         }
@@ -136,31 +147,28 @@ namespace Interactables
         public void HoverEnd()
         {
             m_onHoverEnd?.Invoke(this);
+        
+            m_hoverTextDisplay.CancelUpdateHoverTextRequest(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         }
 
         public bool InteractionSuccesful()
         {
-            m_audioSource.clip = m_dataAsset.SuccesfulInteractSound.AudioClip;
+            m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
             m_audioSource.Play();
 
-            Subtitles.Instance.DisplayText(m_dataAsset.SuccesfulInteractSound.Text);
+            m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
 
             return true;
         }
 
         public bool InteractionWrong()
         {
-            m_audioSource.clip = m_dataAsset.WrongInteractSound.AudioClip;
+            m_audioSource.clip = DataAsset.WrongInteractSound.AudioClip;
             m_audioSource.Play();
 
-            Subtitles.Instance.DisplayText(m_dataAsset.WrongInteractSound.Text);
+            m_interactionTextDisplay.UpdateInteractionText(DataAsset.WrongInteractSound.Text);
 
             return true;
-        }
-
-        public void UpdateData(InteractableAsset _asset)
-        {
-            m_dataAsset = _asset;
         }
     }
 }

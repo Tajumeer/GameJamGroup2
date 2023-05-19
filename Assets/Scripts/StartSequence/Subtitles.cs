@@ -1,44 +1,53 @@
+using StartSequence.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 
 namespace UI
 {
-    public class Subtitles : MonoBehaviour
+    public class Subtitles : MonoBehaviour, IInteractionTextDisplay, IHoverTextDisplay
     {
-        public static Subtitles Instance { get; private set; }
-
         [SerializeField]
         private float m_fadeOutDelay = 5.0f;
 
         private TextMeshProUGUI m_textField = null;
         private Coroutine m_fadeOutTimer = null;
 
+        private string m_hoverTextQueue = string.Empty;
+        private bool m_isDisplayHoverText = false;
+
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(this.gameObject);
-                return;
-            }
-            Instance = this;
-            m_textField = GetComponent<TextMeshProUGUI>();
-
-            this.gameObject.SetActive(false);
+            m_textField = GetComponentInChildren<TextMeshProUGUI>();
         }
 
-        private void OnDestroy()
+        private IEnumerator FadeOutTimer()
         {
-            if (Instance == this)
+            yield return new WaitForSeconds(m_fadeOutDelay);
+
+            m_textField.text = string.Empty;
+
+            if (m_hoverTextQueue != string.Empty)
             {
-                Instance = null;
+                m_isDisplayHoverText = true;
+                UpdateText(m_hoverTextQueue);
+                yield break;
             }
+
+            m_textField.gameObject.SetActive(false);
         }
 
-        public void DisplayText(string _text)
+        public void UpdateInteractionText(string _text)
+        {
+            m_isDisplayHoverText = false;
+
+            UpdateText(_text);
+        }
+
+        private void UpdateText(string _text)
         {
             m_textField.text = _text;
-            this.gameObject.SetActive(true);
+            m_textField.gameObject.SetActive(true);
 
             if (m_fadeOutTimer != null)
             {
@@ -47,11 +56,32 @@ namespace UI
             m_fadeOutTimer = StartCoroutine(FadeOutTimer());
         }
 
-        private IEnumerator FadeOutTimer()
+        public void RequestUpdateHoverText(string _text)
         {
-            yield return new WaitForSeconds(m_fadeOutDelay);
+            if (m_textField.text == string.Empty)
+            {
+                m_isDisplayHoverText = true;
+                UpdateText(_text);
+            }
+            else
+            {
+                if (m_isDisplayHoverText)
+                {
+                    UpdateText(_text);
+                }
+                else
+                {
+                    m_hoverTextQueue = _text;
+                }
+            }
+        }
 
-            this.gameObject.SetActive(false);
+        public void CancelUpdateHoverTextRequest(string _text)
+        {
+            if (m_hoverTextQueue != _text)
+                return;
+
+            m_hoverTextQueue = string.Empty;
         }
     }
 }

@@ -27,6 +27,8 @@ public class PowerConsole : BaseInteractable
 
     public override bool HoverStart()
     {
+        m_audioSource.clip = DataAsset.HoverSound;
+        m_audioSource.Play();
         return true;
     }
 

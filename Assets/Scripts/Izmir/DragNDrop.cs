@@ -5,40 +5,59 @@ using UnityEngine;
 public class DragNDrop : MonoBehaviour
 {
     Vector3 mousePositionOffset;
+    Vector3 mouseWPos;
+    Vector3 tempPos;
+    [SerializeField] bool freezeDragY;
+    [SerializeField] bool freezeDragX;
     [SerializeField] float dragSpeed = 10;
-
-    private Collider2D _collider;
 
     private void Start()
     {
-        _collider = GetComponent<Collider2D>();
+
+        tempPos = transform.position;
+        
     }
+
     private Vector3 GetMouseWorldPostion()
     {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void OnMouseDown()
     {
-            mousePositionOffset = gameObject.transform.position - GetMouseWorldPostion();
-        
-        
+
+        mouseWPos = GetMouseWorldPostion();
+
+        if (freezeDragY)
+        {
+            mouseWPos.y = tempPos.y;
+        }
+        else if (freezeDragX)
+        {
+            mouseWPos.x = tempPos.x;
+        }
+
+        mousePositionOffset = gameObject.transform.position - mouseWPos;
+
+
+
     }
     private void OnMouseDrag()
     {
-            transform.position = Vector3.MoveTowards(transform.position, GetMouseWorldPostion() + mousePositionOffset, dragSpeed * Time.deltaTime);
-    }
+        mouseWPos = GetMouseWorldPostion();
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        DragNDrop collidedDraggable = GetComponent<DragNDrop>();
-
-        if (collidedDraggable != null)
+        if (freezeDragY)
         {
-            ColliderDistance2D colliderDistance2D = other.Distance(_collider);
-
-            Vector3 diff = new Vector3(colliderDistance2D.normal.x, colliderDistance2D.normal.y) * colliderDistance2D.distance;
-            transform.position -= diff;
+            mouseWPos.y = tempPos.y;
         }
+        else if (freezeDragX)
+        {
+            mouseWPos.x = tempPos.x;
+        }
+
+
+        transform.position = Vector3.MoveTowards(transform.position, mouseWPos + mousePositionOffset, dragSpeed * Time.deltaTime);
+        //transform.position = mouseWPos +  mousePositionOffset;
+
     }
 }

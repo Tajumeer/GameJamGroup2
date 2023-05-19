@@ -137,8 +137,7 @@ GameObject:
   - component: {fileID: 192529334}
   - component: {fileID: 192529333}
   - component: {fileID: 192529332}
-  - component: {fileID: 192529338}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: forwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b238e6216f1eda48b2448bb997b6d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragable: 0
+  freezeDragY: 0
+  freezeDragX: 0
   dragSpeed: 10
 --- !u!61 &192529334
 BoxCollider2D:
@@ -329,18 +329,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &192529338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192529331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 319deca0473b2d04b808a94bcd4bac7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1049600044
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +343,7 @@ GameObject:
   - component: {fileID: 1049600048}
   - component: {fileID: 1049600049}
   - component: {fileID: 1049600050}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,12 +410,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049600044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.52, z: 0}
+  m_LocalPosition: {x: 0, y: 1.951, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1049600047
 Rigidbody2D:
@@ -444,12 +432,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 0
 --- !u!61 &1049600048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -459,8 +447,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 1049600044}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 6200000, guid: 94ba190e0d83b0842b0cf8349fc79104, type: 2}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -488,7 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b238e6216f1eda48b2448bb997b6d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragable: 0
+  freezeDragY: 0
+  freezeDragX: 0
   dragSpeed: 10
 --- !u!114 &1049600050
 MonoBehaviour:
@@ -560,7 +549,7 @@ GameObject:
   - component: {fileID: 1065935712}
   - component: {fileID: 1065935711}
   - component: {fileID: 1065935710}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LowerHigherCraneButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b238e6216f1eda48b2448bb997b6d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragable: 0
+  freezeDragY: 0
+  freezeDragX: 0
   dragSpeed: 10
 --- !u!61 &1065935712
 BoxCollider2D:
@@ -763,10 +753,11 @@ GameObject:
   - component: {fileID: 1203752097}
   - component: {fileID: 1203752096}
   - component: {fileID: 1203752095}
-  - component: {fileID: 1203752094}
   - component: {fileID: 1203752093}
+  - component: {fileID: 1203752099}
+  - component: {fileID: 1203752100}
   m_Layer: 0
-  m_Name: SquareDo
+  m_Name: StickObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,7 +807,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1203752094}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DragNDrop, Assembly-CSharp
         m_MethodName: SaySomething
         m_Mode: 1
@@ -828,20 +819,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1203752094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203752092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b238e6216f1eda48b2448bb997b6d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDragable: 0
-  dragSpeed: 10
 --- !u!61 &1203752095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -852,7 +829,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -883,12 +860,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 0
 --- !u!212 &1203752097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -954,8 +931,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!255 &1203752099
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203752092}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -6.06, y: 1.89}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!114 &1203752100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203752092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3c8c5269f44b94e9fd857b22241ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1674670041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1095,7 @@ GameObject:
   - component: {fileID: 2084767731}
   - component: {fileID: 2084767730}
   - component: {fileID: 2084767729}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: backwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b238e6216f1eda48b2448bb997b6d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDragable: 0
+  freezeDragY: 0
+  freezeDragX: 0
   dragSpeed: 10
 --- !u!61 &2084767731
 BoxCollider2D:

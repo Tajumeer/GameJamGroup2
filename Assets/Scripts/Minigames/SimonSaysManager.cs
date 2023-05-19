@@ -54,6 +54,7 @@ namespace Minigames
         private int m_currentRound = -1;
 
         private event Action<IMinigame> m_onMinigameStarted;
+
         private event Action<IMinigame> m_onMinigameEnded;
 
         private event Action m_onSequenceShowFinished;

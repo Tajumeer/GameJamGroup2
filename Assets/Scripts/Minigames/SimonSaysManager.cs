@@ -75,7 +75,9 @@ namespace Minigames
 
         public bool EndMinigame()
         {
-            throw new NotImplementedException();
+            m_onMinigameEnded?.Invoke(this);
+
+            return true;
         }
 
         public bool StartMinigame()
@@ -166,6 +168,9 @@ namespace Minigames
                 yield return new WaitForSeconds(_delay);
 
                 m_interactableToRenderer[_order[index]].color = colorCache;
+
+                yield return new WaitForSeconds(_delay * 0.5f);
+
                 index++;
             }
 

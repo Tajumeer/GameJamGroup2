@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Utility
 {
-
     public static class Extensions
     {
         public static T Random<T>(this List<T> _list)

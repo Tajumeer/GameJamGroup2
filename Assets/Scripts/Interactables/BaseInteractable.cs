@@ -1,3 +1,5 @@
+using StartSequence.UI;
+using System.Linq;
 using UI;
 using UnityEngine;
 
@@ -79,6 +81,9 @@ namespace Interactables
         protected bool m_isHovered = false;
         protected bool m_wasHoveredLastFrame = false;
 
+        protected IHoverTextDisplay m_hoverTextDisplay;
+        protected IInteractionTextDisplay m_interactionTextDisplay;
+
         private void OnValidate()
         {
             if (DataAsset == null)
@@ -90,6 +95,14 @@ namespace Interactables
         private void Awake()
         {
             m_audioSource = GetComponent<AudioSource>();
+
+            m_hoverTextDisplay = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+                                                .OfType<IHoverTextDisplay>()
+                                                .FirstOrDefault();
+
+            m_interactionTextDisplay = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+                                                .OfType<IInteractionTextDisplay>()
+                                                .FirstOrDefault();
         }
 
         private void Update()
@@ -126,7 +139,7 @@ namespace Interactables
 
             m_onHoverStart?.Invoke(this);
 
-            // Subtitles.Instance.DisplayText(m_dataAsset.ObjectName);
+            m_hoverTextDisplay.RequestUpdateHoverText(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
 
             return true;
         }
@@ -134,6 +147,8 @@ namespace Interactables
         public void HoverEnd()
         {
             m_onHoverEnd?.Invoke(this);
+        
+            m_hoverTextDisplay.CancelUpdateHoverTextRequest(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         }
 
         public bool InteractionSuccesful()
@@ -141,7 +156,7 @@ namespace Interactables
             m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
             m_audioSource.Play();
 
-            Subtitles.Instance.DisplayText(DataAsset.SuccesfulInteractSound.Text);
+            m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
 
             return true;
         }
@@ -151,7 +166,7 @@ namespace Interactables
             m_audioSource.clip = DataAsset.WrongInteractSound.AudioClip;
             m_audioSource.Play();
 
-            Subtitles.Instance.DisplayText(DataAsset.WrongInteractSound.Text);
+            m_interactionTextDisplay.UpdateInteractionText(DataAsset.WrongInteractSound.Text);
 
             return true;
         }

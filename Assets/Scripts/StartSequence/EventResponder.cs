@@ -5,6 +5,7 @@ using System.Linq;
 using Minigames;
 using Sounds;
 using UI;
+using StartSequence.UI;
 
 namespace Events
 {
@@ -59,6 +60,7 @@ namespace Events
         private AudioSource m_audioSource = null;
         private event System.Action m_onAllEventsCleared;
         private int m_currentIndex;
+        private IInteractionTextDisplay m_interactionTextDisplay;
 
         private void Awake()
         {
@@ -97,6 +99,10 @@ namespace Events
             {
                 BindToMinigames(minigame);
             }
+
+            m_interactionTextDisplay = GameObject.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+                                                    .OfType<IInteractionTextDisplay>()
+                                                    .FirstOrDefault();
 
             CheckNextEvent();
         }
@@ -227,7 +233,7 @@ namespace Events
                 m_audioSource.Play();
             }
 
-            Subtitles.Instance.DisplayText(_clip.Clip.Text);
+            m_interactionTextDisplay.UpdateInteractionText(_clip.Clip.Text);
 
             if (_clip.Clip.AudioClip != null)
             {

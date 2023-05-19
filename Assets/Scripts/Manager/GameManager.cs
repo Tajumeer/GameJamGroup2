@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Scene = UnityEditor.SearchService.Scene;
 
 namespace Manager
 {
@@ -7,6 +9,9 @@ namespace Manager
     {
         public static GameManager Instance;
         
+        [SerializeField] private GameObject m_shipObject;
+
+        public bool IsShowingShipInside;
         
         
         void Awake()
@@ -16,12 +21,21 @@ namespace Manager
                 Destroy(this.gameObject);
                 return;
             }
-
             Instance = this;
         }
-        
+
+        private void Start()
+        {
+            
+        }
+
         void Update()
         {
+            if (SceneManager.GetActiveScene().name == "LoadingCargeShipInside") ;
+            {
+                IsShowingShipInside = true;
+            }
+            m_shipObject.SetActive(IsShowingShipInside);
         }
 
         private void OnDestroy()

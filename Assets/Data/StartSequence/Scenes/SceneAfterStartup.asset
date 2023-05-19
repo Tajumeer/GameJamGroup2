@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b8d23a2ee8eb94996236ed81894f8b, type: 3}
   m_Name: SceneAfterStartup
   m_EditorClassIdentifier: 
-  m_sceneName: No scene
+  m_sceneName: Battle_Scene

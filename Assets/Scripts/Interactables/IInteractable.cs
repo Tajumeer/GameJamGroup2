@@ -17,7 +17,7 @@ namespace Interactables
         /// <returns>Was the interaction succesful?</returns>
         public bool Interact();
 
-        public bool InteractionSuccesful();
+        public bool InteractionSuccessful();
         public bool InteractionWrong();
     }
 }

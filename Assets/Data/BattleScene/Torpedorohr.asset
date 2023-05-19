@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1755957e179b120488d9b3bc5edffcfd, type: 3}
-  m_Name: PirateShip
+  m_Name: Torpedorohr
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_objectName: PirateShip
-  m_description: Enemy that tries to steal you cargo
+  m_objectName: Torpedorohr
+  m_description: Round Pipe which fires Torpedoes
   m_hoverSound: {fileID: 8300000, guid: c319857ce9b19d844a3cbcc3a607ba50, type: 3}
   m_wrongInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: That won't defeat him
+    m_text: Torpedon't do this!
   m_succesfulInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: Great! He won't be a problem anymore
+    m_text: Torpedolauncher loaded!

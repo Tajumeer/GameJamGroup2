@@ -31,7 +31,7 @@ namespace Events.Actions
             if (m_hasInteracted)
                 return;
 
-            _interactable.InteractionSuccesful();
+            _interactable.InteractionSuccessful();
             m_hasInteracted = true;
         }
 

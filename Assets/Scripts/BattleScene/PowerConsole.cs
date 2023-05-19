@@ -11,7 +11,7 @@ public class PowerConsole : BaseInteractable
     {
         if(labyrinth.active == false && !labyrinthGoal.labyrinthIsWon)
         {
-            InteractionSuccesful();
+            InteractionSuccessful();
             labyrinth.SetActive(true);
         }
         else if(labyrinth.active == false && labyrinthGoal.labyrinthIsWon)
@@ -32,7 +32,7 @@ public class PowerConsole : BaseInteractable
         return true;
     }
 
-    public override bool InteractionSuccesful()
+    public override bool InteractionSuccessful()
     {
         m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
         m_audioSource.Play();
@@ -44,6 +44,9 @@ public class PowerConsole : BaseInteractable
 
     public override bool InteractionWrong()
     {
+        m_audioSource.clip = DataAsset.WrongInteractSound.AudioClip;
+        m_audioSource.Play();
+
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.WrongInteractSound.Text);
         return true;
     }

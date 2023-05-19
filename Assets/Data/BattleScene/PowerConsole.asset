@@ -15,10 +15,10 @@ MonoBehaviour:
   m_sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_objectName: PowerConsole
   m_description: A Console to modify your ships Power
-  m_hoverSound: {fileID: 8300000, guid: eb441783ca093cc45ba80e52eb464565, type: 3}
+  m_hoverSound: {fileID: 8300000, guid: c319857ce9b19d844a3cbcc3a607ba50, type: 3}
   m_wrongInteractSound:
     m_audioClip: {fileID: 0}
     m_text: You already converted you Power!
   m_succesfulInteractSound:
-    m_audioClip: {fileID: 8300000, guid: eb441783ca093cc45ba80e52eb464565, type: 3}
+    m_audioClip: {fileID: 0}
     m_text: Try to convert your ships power!

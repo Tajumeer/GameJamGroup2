@@ -151,7 +151,7 @@ namespace Interactables
             m_hoverTextDisplay.CancelUpdateHoverTextRequest(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         }
 
-        public virtual bool InteractionSuccesful()
+        public virtual bool InteractionSuccessful()
         {
             m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
             m_audioSource.Play();

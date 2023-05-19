@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cargo
+  - Electron
+  - InnerLabyrinthWall
+  - LaserGate
   layers:
   - Default
   - TransparentFX

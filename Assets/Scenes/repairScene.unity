@@ -304,7 +304,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 7
   _height: 7
-  pipe_tilePrefab: {fileID: 3665239629587665798, guid: b1adf02806e8edd4da883d9cbb334143, type: 3}
+  pipe_emptyPrefab: {fileID: 6979733014916289978, guid: a48f6a1eeabe75d40b41adecc5fcbf36, type: 3}
+  pipe_player_emptyPrefab: {fileID: 3665239629587665798, guid: b1adf02806e8edd4da883d9cbb334143, type: 3}
+  pipe_L_downleftPrefab: {fileID: 1611377145813517809, guid: 63b6ebc1a9122db43856996622457dd8, type: 3}
+  pipe_L_rightdownPrefab: {fileID: 2103030307159899749, guid: efccdf40dbfa0794e8302820e1128fe8, type: 3}
+  pipe_L_rightdown_min10Prefab: {fileID: 5178952688251931955, guid: 3eb85b8e115ee614cbaa7c028437a417, type: 3}
+  pipe_L_upleftPrefab: {fileID: 7580315340212430060, guid: a9f108cc1a847a04ca228f4dabd0b55e, type: 3}
+  pipe_L_uprightPrefab: {fileID: 6330477933753177261, guid: 46ad34f1f0b403141aaf00ae76dbcaef, type: 3}
+  pipe_quad_cplus5Prefab: {fileID: 1315711249959313456, guid: a49dedd0104d16f40a6a6a1e4c0125fa, type: 3}
+  pipe_straight_horizontalPrefab: {fileID: 6739343736946760773, guid: 69f033e511d22e44c9002bbd63f882a4, type: 3}
+  pipe_straight_horizontal_plus5Prefab: {fileID: 256694656006423007, guid: 1e5ceb34d331a3043abe77cb6f3ad62f, type: 3}
+  pipe_straight_horizontal_plus10Prefab: {fileID: 8780654171423068101, guid: 400a3c0feace8c5469370683aa617285, type: 3}
+  pipe_straight_horizontal_min5Prefab: {fileID: 7661613303920372973, guid: 9f1398cb74a711140826bb6ed31c3e28, type: 3}
+  pipe_straight_verticalPrefab: {fileID: 6940712549566621663, guid: a2069f41e49af7347b020518bfcf0472, type: 3}
+  pipe_straight_vertical_plus5Prefab: {fileID: 5106862315203572503, guid: 6b72581fc9ac0674aa92de29358a9b48, type: 3}
+  pipe_straight_vertical_cmin5Prefab: {fileID: 613885647688970552, guid: 6b60b18f8a00b4c408a38aa2667dbbc0, type: 3}
+  pipe_straight_vertical_cmin10Prefab: {fileID: 9123662732718671928, guid: 2f5ef65e684152f4e9096cda08dfedea, type: 3}
+  pipe_straight_vertical_c0Prefab: {fileID: 5257539298144810573, guid: c2afbb3ce29297a4c9a57a91e772de7e, type: 3}
+  pipe_straight_vertical_cplus10Prefab: {fileID: 8342175549265049867, guid: 3aaee29d76679264baa12e38a193a7be, type: 3}
+  pipe_T_leftdownrightPrefab: {fileID: 4442455324032318287, guid: 27eb400665e96af42b542e0390300a36, type: 3}
+  pipe_T_leftdownright_min15Prefab: {fileID: 5006230794153559914, guid: 502f27a7224b5ef458cdb6049bc412b3, type: 3}
+  pipe_T_leftdownright_cplus5Prefab: {fileID: 2661098855190214783, guid: 5d3b2744084940148926f0165e8b357a, type: 3}
+  pipe_T_updownleftPrefab: {fileID: 6091447107961025548, guid: 1ce3772eaf9d75143a6e45e2ef28a920, type: 3}
+  pipe_T_updownleft_min5Prefab: {fileID: 5991033358351421566, guid: 79234f5983a6045498d5c69f9f589cb3, type: 3}
+  pipe_T_updownleft_cmin5Prefab: {fileID: 5398055641047360444, guid: b1e10eeb53f9b724f9b44197bc2935fd, type: 3}
+  pipe_T_uprightdownPrefab: {fileID: 7769130866544414982, guid: a2dbe06af3a8e4e48999d7673cc1d021, type: 3}
+  pipe_T_uprightdown_min5Prefab: {fileID: 5515071344271155395, guid: e01b7c5e82661d0488b39394d102b892, type: 3}
+  pipe_T_uprightdown_min10Prefab: {fileID: 7991635351066471738, guid: e3969ea4d958c24419a7c276562ccc91, type: 3}
+  pipe_T_uprightleftPrefab: {fileID: 3722167537565177476, guid: f136863d202bc9442af0253483f4a68e, type: 3}
   _cam: {fileID: 1387808855}
 --- !u!4 &1666966930
 Transform:

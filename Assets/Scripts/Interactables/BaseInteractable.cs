@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Interactables
 {
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource), typeof(Rigidbody2D))]
     public class BaseInteractable : MonoBehaviour, IInteractable, IHoverable, IInteractionDataUser
     {
 
@@ -118,21 +118,21 @@ namespace Interactables
             IsHovered = false;
         }
 
-        public bool Interact()
+        public virtual bool Interact()
         {
             m_onInteract?.Invoke(this);
 
             return true;
         }
 
-        public bool Hover()
+        public virtual bool Hover()
         {
             m_onHover?.Invoke(this);
 
             return true;
         }
 
-        public bool HoverStart()
+        public virtual bool HoverStart()
         {
             m_audioSource.clip = DataAsset.HoverSound;
             m_audioSource.Play();
@@ -144,14 +144,14 @@ namespace Interactables
             return true;
         }
 
-        public void HoverEnd()
+        public virtual void HoverEnd()
         {
             m_onHoverEnd?.Invoke(this);
         
             m_hoverTextDisplay.CancelUpdateHoverTextRequest(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         }
 
-        public bool InteractionSuccesful()
+        public virtual bool InteractionSuccesful()
         {
             m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
             m_audioSource.Play();
@@ -161,7 +161,7 @@ namespace Interactables
             return true;
         }
 
-        public bool InteractionWrong()
+        public virtual bool InteractionWrong()
         {
             m_audioSource.clip = DataAsset.WrongInteractSound.AudioClip;
             m_audioSource.Play();

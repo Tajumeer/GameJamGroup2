@@ -6,6 +6,8 @@ public class Electron_Controller : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    [SerializeField] Transform startingPoint;
+
     float horizontal;
     float vertical;
 
@@ -27,5 +29,13 @@ public class Electron_Controller : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         rb.velocity = rb.velocity.normalized * runSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("InnerLabyrinthWall") || other.CompareTag("LaserGate"))
+        {
+            transform.position = startingPoint.position;
+        }
     }
 }

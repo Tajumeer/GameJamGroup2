@@ -23,17 +23,22 @@ namespace StartSequence
             if (hit.collider == null)
                 return;
 
-            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            if (interactable == null)
-                return;
 
             if (isClicking)
             {
+                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                if (interactable == null)
+                    return;
+           
                 interactable.Interact();
             }
             else
             {
-                interactable.IsHovered = true;
+                IHoverable hoverable = hit.collider.GetComponent<IHoverable>();
+                if (hoverable == null)
+                    return;
+
+                hoverable.IsHovered = true;
             }
         }
     }

@@ -5,7 +5,7 @@ namespace Interactables
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(AudioSource))]
-    public class BaseInteractable : MonoBehaviour, IInteractable
+    public class BaseInteractable : MonoBehaviour, IInteractable, IHoverable, IInteractionDataUser
     {
 
         public event System.Action<IInteractable> OnInteract
@@ -60,13 +60,11 @@ namespace Interactables
             }
         }
 
-        public string Description => m_dataAsset.Description;
-
-        public string Name => m_dataAsset.ObjectName;
-
         public bool IsHovered { get => m_isHovered; set => m_isHovered = value; }
 
         public GameObject Owner => this.gameObject;
+
+        public InteractableAsset DataAsset { get => m_dataAsset; set => m_dataAsset = value; }
 
         [SerializeField]
         protected InteractableAsset m_dataAsset = null;
@@ -83,10 +81,10 @@ namespace Interactables
 
         private void OnValidate()
         {
-            if (m_dataAsset == null)
+            if (DataAsset == null)
                 return;
 
-            this.gameObject.name = m_dataAsset.ObjectName;
+            this.gameObject.name = DataAsset.ObjectName;
         }
 
         private void Awake()
@@ -123,7 +121,7 @@ namespace Interactables
 
         public bool HoverStart()
         {
-            m_audioSource.clip = m_dataAsset.HoverSound;
+            m_audioSource.clip = DataAsset.HoverSound;
             m_audioSource.Play();
 
             m_onHoverStart?.Invoke(this);
@@ -140,27 +138,22 @@ namespace Interactables
 
         public bool InteractionSuccesful()
         {
-            m_audioSource.clip = m_dataAsset.SuccesfulInteractSound.AudioClip;
+            m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
             m_audioSource.Play();
 
-            Subtitles.Instance.DisplayText(m_dataAsset.SuccesfulInteractSound.Text);
+            Subtitles.Instance.DisplayText(DataAsset.SuccesfulInteractSound.Text);
 
             return true;
         }
 
         public bool InteractionWrong()
         {
-            m_audioSource.clip = m_dataAsset.WrongInteractSound.AudioClip;
+            m_audioSource.clip = DataAsset.WrongInteractSound.AudioClip;
             m_audioSource.Play();
 
-            Subtitles.Instance.DisplayText(m_dataAsset.WrongInteractSound.Text);
+            Subtitles.Instance.DisplayText(DataAsset.WrongInteractSound.Text);
 
             return true;
-        }
-
-        public void UpdateData(InteractableAsset _asset)
-        {
-            m_dataAsset = _asset;
         }
     }
 }

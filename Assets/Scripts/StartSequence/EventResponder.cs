@@ -58,7 +58,6 @@ namespace Events
         private List<GameObject> m_interactableObjects = new List<GameObject>();
         private AudioSource m_audioSource = null;
         private event System.Action m_onAllEventsCleared;
-
         private int m_currentIndex;
 
         private void Awake()
@@ -79,6 +78,16 @@ namespace Events
                 BindToInteractable(interactable);
             }
 
+            IHoverable[] hoverables = m_interactableObjects
+                                                        .Select(o => o.GetComponent<IHoverable>())
+                                                        .Where(o => o != null)
+                                                        .ToArray();
+
+            foreach (IHoverable hoverable in hoverables)
+            {
+                BindToHoverable(hoverable);
+            }
+
             IMinigame[] minigames = GameObject.FindObjectsOfType<GameObject>()
                                                 .Select(o => o.GetComponent<IMinigame>())
                                                 .Where(o => o != null)
@@ -95,7 +104,11 @@ namespace Events
         private void BindToInteractable(IInteractable _interactable)
         {
             _interactable.OnInteract += OnInteraction;
-            _interactable.OnHoverStart += OnHover;
+        }
+
+        private void BindToHoverable(IHoverable _hoverable)
+        {
+            _hoverable.OnHoverStart += OnHover;
         }
 
         private void BindToMinigames(IMinigame _minigame)
@@ -138,7 +151,11 @@ namespace Events
                     EventCompleted();
                     break;
                 case EEventType.UPDATE_DATA:
-                    entry.Object.GetComponent<IInteractable>().UpdateData((InteractableAsset)entry.Data);
+                    IInteractionDataUser[] dataUserComponents = entry.Object.GetComponents<IInteractionDataUser>();
+                    foreach (IInteractionDataUser dataUser in dataUserComponents)
+                    {
+                        dataUser.DataAsset = (InteractableAsset)entry.Data;
+                    }
                     EventCompleted();
                     break;
                 case EEventType.PLAY_AUDIO:

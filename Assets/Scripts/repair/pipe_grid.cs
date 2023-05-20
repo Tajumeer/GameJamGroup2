@@ -166,27 +166,27 @@ public class pipe_grid : MonoBehaviour
                         spawnedtile18.name = $"pipe_tile {x} {y}";
                         break;
                     case -215234:
-                        var spawnedtile20 = Instantiate(pipe_T_leftdownright_min15Prefab, new Vector3(x, -y), Quaternion.Euler(0, 0, 180));
+                        var spawnedtile20 = Instantiate(pipe_T_leftdownright_min15Prefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile20.name = $"pipe_tile {x} {y}";
                         break;
                     case 15234:
-                        var spawnedtile21 = Instantiate(pipe_T_leftdownright_cplus5Prefab, new Vector3(x, -y), Quaternion.Euler(0, 0, 180));
+                        var spawnedtile21 = Instantiate(pipe_T_leftdownright_cplus5Prefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile21.name = $"pipe_tile {x} {y}";
                         break;
                     case -25134:
-                        var spawnedtile23 = Instantiate(pipe_T_updownleft_min5Prefab, new Vector3(x, -y), Quaternion.Euler(0, 0, 90));
+                        var spawnedtile23 = Instantiate(pipe_T_updownleft_min5Prefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile23.name = $"pipe_tile {x} {y}";
                         break;
                     case -15134:
-                        var spawnedtile24 = Instantiate(pipe_T_updownleft_cmin5Prefab, new Vector3(x, -y), Quaternion.Euler(0, 0, 90));
+                        var spawnedtile24 = Instantiate(pipe_T_updownleft_cmin5Prefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile24.name = $"pipe_tile {x} {y}";
                         break;
                     case -25123:
-                        var spawnedtile26 = Instantiate(pipe_T_uprightdown_min5Prefab, new Vector3(x, -y), Quaternion.Euler(0, 0, 270));
+                        var spawnedtile26 = Instantiate(pipe_T_uprightdown_min5Prefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile26.name = $"pipe_tile {x} {y}";
                         break;
                     case -210123:
-                        var spawnedtile27 = Instantiate(pipe_T_uprightdown_min10Prefab, new Vector3(x, -y), Quaternion.Euler(0,0,270));
+                        var spawnedtile27 = Instantiate(pipe_T_uprightdown_min10Prefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile27.name = $"pipe_tile {x} {y}";
                         break;
                     case 3124:

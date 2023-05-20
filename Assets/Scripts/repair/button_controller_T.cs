@@ -45,6 +45,10 @@ public class button_controller_T : MonoBehaviour
             return;
         }
         instance = this;
+
+        targetButtonT.sprite = buttonSpritesT[buttonTIndex];
+        targetButtonI.sprite = buttonSpritesI[buttonIIndex];
+        targetButtonL.sprite = buttonSpritesL[buttonLIndex];
     }
 
     private void OnDestroy()

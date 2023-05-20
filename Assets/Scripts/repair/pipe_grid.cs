@@ -7,7 +7,16 @@ public class pipe_grid : MonoBehaviour
     [SerializeField] private int _width, _height;
 
     [SerializeField] private GameObject pipe_emptyPrefab;
-    [SerializeField] private GameObject pipe_player_emptyPrefab;
+    [SerializeField] private GameObject pipe_player_emptyPrefab0;
+    [SerializeField] private GameObject pipe_player_emptyPrefab1;
+    [SerializeField] private GameObject pipe_player_emptyPrefab2;
+    [SerializeField] private GameObject pipe_player_emptyPrefab3;
+    [SerializeField] private GameObject pipe_player_emptyPrefab4;
+    [SerializeField] private GameObject pipe_player_emptyPrefab5;
+    [SerializeField] private GameObject pipe_player_emptyPrefab6;
+    [SerializeField] private GameObject pipe_player_emptyPrefab7;
+    [SerializeField] private GameObject pipe_player_emptyPrefab8;
+    [SerializeField] private GameObject pipe_player_emptyPrefab9;
     [SerializeField] private GameObject pipe_L_rightdown_min10Prefab;
     [SerializeField] private GameObject pipe_L_upleftPrefab;
     [SerializeField] private GameObject pipe_L_uprightPrefab;
@@ -60,9 +69,45 @@ public class pipe_grid : MonoBehaviour
                         var spawnedtile1 = Instantiate(pipe_emptyPrefab, new Vector3(x, -y), Quaternion.identity);
                         spawnedtile1.name = $"pipe_tile {x} {y}";
                         break;
-                    case 5:
-                        var spawnedtile2 = Instantiate(pipe_player_emptyPrefab, new Vector3(x, -y), Quaternion.identity);
-                        spawnedtile2.name = $"pipe_tile {x} {y}";
+                    case 50:
+                        var spawnedtile30 = Instantiate(pipe_player_emptyPrefab0, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile30.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 51:
+                        var spawnedtile31 = Instantiate(pipe_player_emptyPrefab1, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile31.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 52:
+                        var spawnedtile32 = Instantiate(pipe_player_emptyPrefab2, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile32.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 53:
+                        var spawnedtile33 = Instantiate(pipe_player_emptyPrefab3, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile33.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 54:
+                        var spawnedtile34 = Instantiate(pipe_player_emptyPrefab4, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile34.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 55:
+                        var spawnedtile35 = Instantiate(pipe_player_emptyPrefab5, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile35.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 56:
+                        var spawnedtile36 = Instantiate(pipe_player_emptyPrefab6, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile36.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 57:
+                        var spawnedtile37 = Instantiate(pipe_player_emptyPrefab7, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile37.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 58:
+                        var spawnedtile38 = Instantiate(pipe_player_emptyPrefab8, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile38.name = $"pipe_tile {x} {y}";
+                        break;
+                    case 59:
+                        var spawnedtile39 = Instantiate(pipe_player_emptyPrefab9, new Vector3(x, -y), Quaternion.identity);
+                        spawnedtile39.name = $"pipe_tile {x} {y}";
                         break;
                     case -21023:
                         var spawnedtile5 = Instantiate(pipe_L_rightdown_min10Prefab, new Vector3(x, -y), Quaternion.identity);
@@ -156,6 +201,6 @@ public class pipe_grid : MonoBehaviour
 
     private void set_pipe_logic()
     {
-        pipe_logic = new int[,]{{ 313, -11013, 5, -25123, 313, 5, 0},{ -21023, 5, 11013, 5, 313, 3124, 0},{ 15234, 5, 1013, -210123, -1513, 5, 0},{ 314, 21024, 0, 324, 0, -2524, 0},{ 0, -215234, 2513, 5, 313, 151234, 312},{ 0, 5, 0, 0, 0, 324, 2524},{ 313, -15134, 5, 313, 313, -25134, 5}};
+        pipe_logic = new int[,]{{ 313, -11013, 50, -25123, 313, 51, 0},{ -21023, 52, 11013, 53, 313, 3124, 0},{ 15234, 54, 1013, -210123, -1513, 55, 0},{ 314, 21024, 0, 324, 0, -2524, 0},{ 0, -215234, 2513, 56, 313, 151234, 312},{ 0, 57, 0, 0, 0, 324, 2524},{ 313, -15134, 58, 313, 313, -25134, 59}};
     }
 }

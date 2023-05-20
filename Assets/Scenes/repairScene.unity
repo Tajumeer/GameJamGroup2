@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 133067392}
   - component: {fileID: 133067391}
   - component: {fileID: 133067390}
-  - component: {fileID: 133067389}
   m_Layer: 5
   m_Name: straight_pipe_button
   m_TagString: Untagged
@@ -163,21 +162,6 @@ RectTransform:
   m_AnchoredPosition: {x: -200, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &133067389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133067387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5b8109a41c2634989cead2c91d096b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonSprites: []
-  buttonpic: {fileID: 0}
-  index: 0
 --- !u!114 &133067390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 133067391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241397183}
+        m_TargetAssemblyTypeName: button_controller_T, Assembly-CSharp
+        m_MethodName: ChangeSpriteI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &133067391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +256,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133067387}
   m_CullTransparentMesh: 1
+--- !u!1 &241397182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241397184}
+  - component: {fileID: 241397183}
+  m_Layer: 0
+  m_Name: button_controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &241397183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241397182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0105a71208115e408cf5face87436c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSpritesT:
+  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
+  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  - {fileID: 21300000, guid: 720d080ed5afe4645a9ed2caedc1e67d, type: 3}
+  - {fileID: 21300000, guid: 7ef2e761c7b4db049970137d95dff7cb, type: 3}
+  buttonSpritesI:
+  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
+  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  buttonSpritesL:
+  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
+  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  - {fileID: 21300000, guid: 720d080ed5afe4645a9ed2caedc1e67d, type: 3}
+  - {fileID: 21300000, guid: 7ef2e761c7b4db049970137d95dff7cb, type: 3}
+  targetButtonT: {fileID: 1709799678}
+  targetButtonI: {fileID: 133067391}
+  targetButtonL: {fileID: 352270459}
+  buttonTIndex: 0
+  buttonTActive: 0
+  buttonIIndex: 0
+  buttonIActive: 0
+  buttonLIndex: 0
+  buttonLActive: 0
+  playerField0: 0
+  playerField1: 0
+  playerField2: 0
+  playerField3: 0
+  playerField4: 0
+  playerField5: 0
+  playerField6: 0
+  playerField7: 0
+  playerField8: 0
+  playerField9: 0
+--- !u!4 &241397184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241397182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 554.67395, y: 74.55277, z: -4.10076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352270455
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +344,6 @@ GameObject:
   - component: {fileID: 352270460}
   - component: {fileID: 352270459}
   - component: {fileID: 352270458}
-  - component: {fileID: 352270457}
   m_Layer: 5
   m_Name: L_pipe_button
   m_TagString: Untagged
@@ -300,21 +371,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &352270457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352270455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5b8109a41c2634989cead2c91d096b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonSprites: []
-  buttonpic: {fileID: 0}
-  index: 0
 --- !u!114 &352270458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,9 +415,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951310061}
-        m_TargetAssemblyTypeName: button_controller, Assembly-CSharp
-        m_MethodName: ChangeSprite
+      - m_Target: {fileID: 241397183}
+        m_TargetAssemblyTypeName: button_controller_T, Assembly-CSharp
+        m_MethodName: ChangeSpriteL
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -556,7 +612,7 @@ GameObject:
   - component: {fileID: 886393385}
   - component: {fileID: 886393386}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,56 +685,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &951310060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 951310062}
-  - component: {fileID: 951310061}
-  m_Layer: 0
-  m_Name: Toggle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &951310061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951310060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a6308e5280a0ad409ec46bed8dc7cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  targetButton: {fileID: 0}
---- !u!4 &951310062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951310060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 554.67395, y: 74.55277, z: -4.10076}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387808852
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +903,16 @@ MonoBehaviour:
   _width: 7
   _height: 7
   pipe_emptyPrefab: {fileID: 6979733014916289978, guid: a48f6a1eeabe75d40b41adecc5fcbf36, type: 3}
-  pipe_player_emptyPrefab: {fileID: 3665239629587665798, guid: b1adf02806e8edd4da883d9cbb334143, type: 3}
+  pipe_player_emptyPrefab0: {fileID: 3665239629587665798, guid: b1adf02806e8edd4da883d9cbb334143, type: 3}
+  pipe_player_emptyPrefab1: {fileID: 3665239629587665798, guid: b21f23eee14dee345b24046f6f6f0392, type: 3}
+  pipe_player_emptyPrefab2: {fileID: 3665239629587665798, guid: 99953481f135fc341b49f5f74ef107e3, type: 3}
+  pipe_player_emptyPrefab3: {fileID: 3665239629587665798, guid: f7015577a0f6f8e44a8065e9aed8d077, type: 3}
+  pipe_player_emptyPrefab4: {fileID: 3665239629587665798, guid: ed86f8a66a6b64743b7091b96ede206b, type: 3}
+  pipe_player_emptyPrefab5: {fileID: 3665239629587665798, guid: e24ec25ee31bc0c44ac12ef85e478310, type: 3}
+  pipe_player_emptyPrefab6: {fileID: 3665239629587665798, guid: 141f77f98b4417945a5e07814213072b, type: 3}
+  pipe_player_emptyPrefab7: {fileID: 3665239629587665798, guid: 4ae24d35a7e9b2540a6c9c633b5cdbbd, type: 3}
+  pipe_player_emptyPrefab8: {fileID: 3665239629587665798, guid: 0866271d5a6acbb4183bb867bc84b81a, type: 3}
+  pipe_player_emptyPrefab9: {fileID: 3665239629587665798, guid: 33c915f80cfc7dd4dab1734e408c3a2a, type: 3}
   pipe_L_rightdown_min10Prefab: {fileID: 5178952688251931955, guid: 3eb85b8e115ee614cbaa7c028437a417, type: 3}
   pipe_L_upleftPrefab: {fileID: 7580315340212430060, guid: a9f108cc1a847a04ca228f4dabd0b55e, type: 3}
   pipe_L_uprightPrefab: {fileID: 6330477933753177261, guid: 46ad34f1f0b403141aaf00ae76dbcaef, type: 3}
@@ -947,7 +962,6 @@ GameObject:
   - component: {fileID: 1709799679}
   - component: {fileID: 1709799678}
   - component: {fileID: 1709799677}
-  - component: {fileID: 1709799680}
   m_Layer: 5
   m_Name: T_pipe_button
   m_TagString: Untagged
@@ -1019,9 +1033,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951310061}
-        m_TargetAssemblyTypeName: L_pipe_button, Assembly-CSharp
-        m_MethodName: ChangeSprite
+      - m_Target: {fileID: 241397183}
+        m_TargetAssemblyTypeName: button_controller_T, Assembly-CSharp
+        m_MethodName: ChangeSpriteT
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1069,20 +1083,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709799675}
   m_CullTransparentMesh: 1
---- !u!114 &1709799680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709799675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5b8109a41c2634989cead2c91d096b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonSprites:
-  - {fileID: 21300000, guid: 6cbf7c397a9d890479a029afaf347dbb, type: 3}
-  - {fileID: 21300000, guid: d6d4e007413d36743b3418bec09d8e79, type: 3}
-  buttonpic: {fileID: 0}
-  index: 0

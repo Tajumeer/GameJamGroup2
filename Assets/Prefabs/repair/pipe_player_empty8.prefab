@@ -94,10 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4536743516935835026}
   - component: {fileID: 8856127080487614865}
-  - component: {fileID: 9100306096817726123}
   - component: {fileID: 4557573405030235200}
+  - component: {fileID: -3147073774340424036}
   m_Layer: 0
-  m_Name: pipe_player_empty
+  m_Name: pipe_player_empty8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,19 +171,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9100306096817726123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3665239629587665798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c90535b141b204f9d0e5815b1eb954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _highlight: {fileID: 2715111647549753730}
 --- !u!61 &4557573405030235200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,3 +197,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-3147073774340424036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665239629587665798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cdd06967533fcb428169c3d99a20d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlight: {fileID: 2715111647549753730}
+  playerTPipes:
+  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
+  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  - {fileID: 21300000, guid: 720d080ed5afe4645a9ed2caedc1e67d, type: 3}
+  - {fileID: 21300000, guid: 7ef2e761c7b4db049970137d95dff7cb, type: 3}
+  playerIPipes:
+  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
+  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  playerLPipes:
+  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
+  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  - {fileID: 21300000, guid: 720d080ed5afe4645a9ed2caedc1e67d, type: 3}
+  - {fileID: 21300000, guid: 7ef2e761c7b4db049970137d95dff7cb, type: 3}

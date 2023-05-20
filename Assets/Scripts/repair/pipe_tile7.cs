@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pipe_tile : MonoBehaviour
+public class pipe_tile7 : MonoBehaviour
 {
 
     [SerializeField] private GameObject _highlight;
@@ -30,27 +30,27 @@ public class pipe_tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(button_controller_T.instance.buttonTActive == true)
+        if (button_controller_T.instance.buttonTActive == true)
         {
             sr.sprite = playerTPipes[button_controller_T.instance.buttonTIndex];
-            button_controller_T.instance.playerField0 = false;
+            button_controller_T.instance.playerField7 = false;
             return;
         }
-        if(button_controller_T.instance.buttonIActive == true)
+        if (button_controller_T.instance.buttonIActive == true)
         {
             sr.sprite = playerIPipes[button_controller_T.instance.buttonIIndex];
-            if(button_controller_T.instance.buttonIIndex == 0)
+            if (button_controller_T.instance.buttonIIndex == 1)
             {
-                button_controller_T.instance.playerField0 = true;
+                button_controller_T.instance.playerField7 = true;
                 return;
             }
-            button_controller_T.instance.playerField0 = false;
+            button_controller_T.instance.playerField7 = false;
             return;
         }
-        if(button_controller_T.instance.buttonLActive == true)
+        if (button_controller_T.instance.buttonLActive == true)
         {
             sr.sprite = playerLPipes[button_controller_T.instance.buttonLIndex];
-            button_controller_T.instance.playerField0 = false;
+            button_controller_T.instance.playerField7 = false;
             return;
         }
     }

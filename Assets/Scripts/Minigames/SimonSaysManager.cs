@@ -77,7 +77,7 @@ namespace Minigames
         public bool EndMinigame()
         {
             m_onMinigameEnded?.Invoke(this);
-            SceneManager.LoadScene("Scenes/Battle_Scene");
+
             return true;
         }
 

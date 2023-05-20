@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e0fe22dde02f3418e570723a2228ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactables: {fileID: 1504173065}
   m_cargoSceneName: LoadingCargeShipInside
   m_cargoData: {fileID: 11400000, guid: d954bf31781c22f4196807e5167c5098, type: 2}
 --- !u!1 &86125864 stripped
@@ -1638,7 +1637,7 @@ MonoBehaviour:
     m_object: {fileID: 942011246}
     m_data: {fileID: 11400000, guid: 9194bd7a410e9e24bba0c24cbb5884b3, type: 2}
   - m_action: {fileID: 11400000, guid: 752bd6c75cd8ee542b1b2c576a01df70, type: 2}
-    m_object: {fileID: 44455937}
+    m_object: {fileID: 0}
     m_data: {fileID: 0}
   - m_action: {fileID: 11400000, guid: de1084aad77525f47881595d1677110f, type: 2}
     m_object: {fileID: 942011246}

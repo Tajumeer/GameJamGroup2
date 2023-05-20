@@ -45,6 +45,10 @@ public class button_controller_T : MonoBehaviour
             return;
         }
         instance = this;
+
+        targetButtonT.sprite = buttonSpritesT[buttonTIndex];
+        targetButtonI.sprite = buttonSpritesI[buttonIIndex];
+        targetButtonL.sprite = buttonSpritesL[buttonLIndex];
     }
 
     private void OnDestroy()
@@ -59,7 +63,7 @@ public class button_controller_T : MonoBehaviour
     {
         if(playerField0 && playerField1 && playerField4 && playerField5 && playerField6 && playerField7 && playerField9)
         {
-            Debug.Log("Win");
+            Application.Quit();
         }
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EjectButton : BaseInteractable
 {
+    [SerializeField] GameObject frontWindow;
+    [SerializeField] GameObject containmentField;
     public override bool HoverStart()
     {
         m_audioSource.clip = DataAsset.HoverSound;
@@ -14,7 +16,12 @@ public class EjectButton : BaseInteractable
 
     public override bool Interact()
     {
-        InteractionWrong();
+        if (!InteractablesManager.powerIsConverted)
+            InteractionWrong();
+        else
+        {
+            InteractionSuccessful();
+        }
         return true;
     }
 
@@ -25,5 +32,19 @@ public class EjectButton : BaseInteractable
 
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.WrongInteractSound.Text);
         return true;
+    }
+
+    public override bool InteractionSuccessful()
+    {
+        m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
+        m_audioSource.Play();
+
+        m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
+
+        InteractablesManager.windowIsEjected = true;
+        frontWindow.SetActive(false);
+        containmentField.SetActive(true);
+
+        return base.InteractionSuccessful();
     }
 }

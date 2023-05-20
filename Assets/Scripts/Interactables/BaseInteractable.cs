@@ -120,6 +120,20 @@ namespace Interactables
 
         public virtual bool Interact()
         {
+            if (InteractablesManager.currInteractable == null)
+            {
+                InteractablesManager.currInteractable = this;
+                Debug.Log(InteractablesManager.currInteractable);
+            }
+            else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "PirateShip")
+            {
+                InteractionSuccessful();
+            }
+            else
+            {
+                InteractionWrong();
+                InteractablesManager.currInteractable = null;
+            }
             m_onInteract?.Invoke(this);
 
             return true;

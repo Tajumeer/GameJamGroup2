@@ -2,13 +2,16 @@ using Interactables;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractablesManager : MonoBehaviour
 {
     public static InteractablesManager interactablesManager;
-    public bool powerIsConverted = false;
+    public static bool powerIsConverted = false;
+    public static bool windowIsEjected = false;
     public static BaseInteractable currInteractable;
 
+    
     void Awake()
     {
         if (interactablesManager != null)
@@ -17,5 +20,10 @@ public class InteractablesManager : MonoBehaviour
             interactablesManager = this;
 
         DontDestroyOnLoad(this);
+    }
+
+    public static void DestroyPirateShip()
+    {
+        SceneManager.LoadScene("repairShip");
     }
 }

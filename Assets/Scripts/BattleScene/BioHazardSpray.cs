@@ -14,7 +14,16 @@ public class BioHazardSpray : BaseInteractable
 
     public override bool Interact()
     {
-        InteractionWrong();
+        if (InteractablesManager.currInteractable == null)
+        {
+            InteractablesManager.currInteractable = this;
+            Debug.Log(InteractablesManager.currInteractable);
+        }
+        else
+        {
+            InteractionWrong();
+            InteractablesManager.currInteractable = null;
+        }
         return true;
     }
 

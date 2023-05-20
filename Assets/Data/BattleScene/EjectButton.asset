@@ -18,7 +18,7 @@ MonoBehaviour:
   m_hoverSound: {fileID: 8300000, guid: c319857ce9b19d844a3cbcc3a607ba50, type: 3}
   m_wrongInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: Whoops
+    m_text: Hm, probably better if it's not working
   m_succesfulInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: Hm, probably better if it's not working
+    m_text: Whoops!

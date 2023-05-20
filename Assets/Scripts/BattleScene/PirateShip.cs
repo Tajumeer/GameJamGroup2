@@ -6,12 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class PirateShip : BaseInteractable
 {
-    bool isDestroyed = false;
     public override bool Interact()
     {
-        if(isDestroyed)
+        if (InteractablesManager.currInteractable == null)
         {
-            SceneManager.LoadScene("repairScene");
+            InteractablesManager.currInteractable = this;
+            Debug.Log(InteractablesManager.currInteractable);
+        }
+        else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "Toy-Gun" && InteractablesManager.windowIsEjected)
+        {
+            InteractionSuccessful();
+        }
+        else
+        {
+            InteractionWrong();
+            InteractablesManager.currInteractable = null;
         }
         return true;
     }
@@ -25,6 +34,17 @@ public class PirateShip : BaseInteractable
 
     public override bool Hover()
     {
+        return true;
+    }
+
+    public void Destroy()
+    {
+        SceneManager.LoadScene("repairScene");
+    }
+
+    public override bool InteractionSuccessful()
+    {
+        InteractablesManager.DestroyPirateShip();
         return true;
     }
 }

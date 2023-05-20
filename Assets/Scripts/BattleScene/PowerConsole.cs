@@ -6,15 +6,14 @@ using UnityEngine;
 public class PowerConsole : BaseInteractable
 {
     [SerializeField] GameObject labyrinth;
-    [SerializeField] LabyrinthGoal labyrinthGoal;
     public override bool Interact()
     {
-        if(labyrinth.active == false && !labyrinthGoal.labyrinthIsWon)
+        if(labyrinth.active == false && !InteractablesManager.powerIsConverted)
         {
             InteractionSuccessful();
             labyrinth.SetActive(true);
         }
-        else if(labyrinth.active == false && labyrinthGoal.labyrinthIsWon)
+        else if(labyrinth.active == false && InteractablesManager.powerIsConverted)
         {
             InteractionWrong();
         }

@@ -159,9 +159,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5990566, g: 1, b: 0.74419737, a: 0}
+  m_Color: {r: 0.43137258, g: 0.7490196, b: 0.30588236, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -211,15 +211,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _highlight: {fileID: 2715111647549753730}
   playerTPipes:
-  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
-  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
-  - {fileID: 21300000, guid: 720d080ed5afe4645a9ed2caedc1e67d, type: 3}
-  - {fileID: 21300000, guid: 7ef2e761c7b4db049970137d95dff7cb, type: 3}
+  - {fileID: 21300000, guid: 6fd44c54ba112e94eb7b8aa7d640cf96, type: 3}
+  - {fileID: 21300000, guid: 3d62fd8258198f340a9e204061f18fbe, type: 3}
+  - {fileID: 21300000, guid: a320f8fd545fa8b479dee2c6ca44fc29, type: 3}
+  - {fileID: 21300000, guid: ce2643540d60fd5429c27f8d7441f230, type: 3}
   playerIPipes:
-  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
-  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
+  - {fileID: 21300000, guid: c61bc96b13743424084033e72fd04b69, type: 3}
+  - {fileID: 21300000, guid: c53a98d39e8dbc947971bb2ebe03f3cc, type: 3}
   playerLPipes:
-  - {fileID: 21300000, guid: d1b645af7fb4a1549992358bc6ff03d9, type: 3}
-  - {fileID: 21300000, guid: 8a04527e6356e0f478d067abd8e71c2f, type: 3}
-  - {fileID: 21300000, guid: 720d080ed5afe4645a9ed2caedc1e67d, type: 3}
-  - {fileID: 21300000, guid: 7ef2e761c7b4db049970137d95dff7cb, type: 3}
+  - {fileID: 21300000, guid: c6ffd99242412a048b64af776796fcc7, type: 3}
+  - {fileID: 21300000, guid: d581c7272af4e1e46be08fcbc2df5270, type: 3}
+  - {fileID: 21300000, guid: 2b0d54cd4cbf1d64da5d577692b3b7fa, type: 3}
+  - {fileID: 21300000, guid: f4015e133412d294eb643c03851ac6a4, type: 3}

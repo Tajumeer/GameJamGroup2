@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utility;
 
 namespace Minigames
@@ -76,7 +77,7 @@ namespace Minigames
         public bool EndMinigame()
         {
             m_onMinigameEnded?.Invoke(this);
-
+            SceneManager.LoadScene("Scenes/Battle_Scene");
             return true;
         }
 

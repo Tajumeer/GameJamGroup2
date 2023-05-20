@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e0fe22dde02f3418e570723a2228ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Interactables: {fileID: 1504173065}
   m_cargoSceneName: LoadingCargeShipInside
   m_cargoData: {fileID: 11400000, guid: d954bf31781c22f4196807e5167c5098, type: 2}
 --- !u!1 &86125864 stripped

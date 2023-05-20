@@ -35,7 +35,7 @@ namespace LoadingShipp
             m_loadingShip.SetActive(false);
             m_loadingArea.SetActive(false);
             SceneManager.LoadScene("SpaceshipStartSequence", LoadSceneMode.Additive);
-            Destroy(this);
+            
         }
         
         

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Manager;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -27,6 +28,7 @@ namespace LoadingBay
         
         private void Awake()
         {
+            GameManager.Instance.IsShowingShipInside = true;
             m_hangarRotation = m_hangar.transform.rotation;
         }
 

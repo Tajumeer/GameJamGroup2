@@ -1,18 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using Manager;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LoadingCheck : MonoBehaviour
+namespace LoadingShipp
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LoadingCheck : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private int m_cargoAmount;
+        private int m_cargoLoaded;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void OnTriggerEnter2D(Collider2D _other)
+        {
+            if (_other.gameObject.CompareTag("Cargo"))
+            {
+                m_cargoLoaded++;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D _other)
+        {
+            if (_other.gameObject.CompareTag("Cargo"))
+            {
+                m_cargoLoaded--;
+            }
+        }
+
+        private void Update()
+        {
+            Debug.Log(m_cargoLoaded);
+            if (m_cargoLoaded != m_cargoAmount) return;
+            GameManager.Instance.IsShowingShipInside = false;
+            SceneManager.LoadScene("SpaceshipStartSequence");
+        }
     }
 }

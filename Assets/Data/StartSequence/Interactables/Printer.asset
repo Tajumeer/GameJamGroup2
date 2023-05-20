@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_objectName: Printer
-  m_description: Used for important communication
+  m_description: Used for important communication.
   m_hoverSound: {fileID: 0}
   m_wrongInteractSound:
     m_audioClip: {fileID: 0}

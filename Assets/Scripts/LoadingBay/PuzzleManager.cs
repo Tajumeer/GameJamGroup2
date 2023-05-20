@@ -28,7 +28,7 @@ namespace LoadingBay
         
         private void Awake()
         {
-            GameManager.Instance.IsShowingShipInside = true;
+            // GameManager.Instance.IsShowingShipInside = true;
             m_hangarRotation = m_hangar.transform.rotation;
         }
 

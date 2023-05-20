@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1755957e179b120488d9b3bc5edffcfd, type: 3}
   m_Name: PenCollection
   m_EditorClassIdentifier: 
-  m_sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_sprite: {fileID: 21300000, guid: 9dd439e7d3e4ab84bbc9c139aa773b1d, type: 3}
   m_objectName: Pen collection
   m_description: Pens - all different types of pens.
   m_hoverSound: {fileID: 0}

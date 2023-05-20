@@ -128,6 +128,8 @@ namespace Minigames
             GameObject[] objects = GameObject.FindGameObjectsWithTag("Cargo");
 
             LoadingShipp.ShipDragNDrop shipDragNDrop = GameObject.FindObjectOfType<LoadingShipp.ShipDragNDrop>();
+            LoadingShipp.LoadingCheck loadingCheck = GameObject.FindObjectOfType<LoadingShipp.LoadingCheck>();
+            loadingCheck.enabled = false;
             shipDragNDrop.enabled = false;
 
             AudioSource source = null;

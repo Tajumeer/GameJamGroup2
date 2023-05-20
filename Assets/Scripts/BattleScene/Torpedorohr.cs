@@ -10,6 +10,8 @@ public class Torpedorohr : BaseInteractable
     {
         m_audioSource.clip = DataAsset.HoverSound;
         m_audioSource.Play();
+
+        m_hoverTextDisplay.RequestUpdateHoverText(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         return true;
     }
 
@@ -46,6 +48,7 @@ public class Torpedorohr : BaseInteractable
         m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
         m_audioSource.Play();
         InteractablesManager.toyAmmoIsCollected = true;
+        Debug.Log(InteractablesManager.toyAmmoIsCollected);
 
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
         return true;

@@ -13,7 +13,7 @@ public class PirateShip : BaseInteractable
             InteractablesManager.currInteractable = this;
             Debug.Log(InteractablesManager.currInteractable);
         }
-        else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "Toy-Gun" && 
+        else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "Watergun" && 
                  InteractablesManager.windowIsEjected &&
                  InteractablesManager.toyAmmoIsCollected)
         {
@@ -31,6 +31,8 @@ public class PirateShip : BaseInteractable
     {
         m_audioSource.clip = DataAsset.HoverSound;
         m_audioSource.Play();
+
+        m_hoverTextDisplay.RequestUpdateHoverText(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         return true;
     }
 

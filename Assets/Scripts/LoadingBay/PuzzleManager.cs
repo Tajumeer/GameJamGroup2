@@ -1,24 +1,34 @@
 using System;
 using System.Collections.Generic;
+using Manager;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 
 namespace LoadingBay
 {
     [DisallowMultipleComponent]
     public class PuzzleManager : MonoBehaviour
     {
+        #region Variables
         
-        [SerializeField] private Slider m_gravitySlider;
+        [Header("Hangar")]
         [SerializeField] private Slider m_rotationSlider;
         [SerializeField] private GameObject m_hangar;
         [SerializeField] private float m_lerpSpeed;
-        [SerializeField] private float m_gravityMultiplier;
-        
         private Quaternion m_hangarRotation;
+        
+        [Header("Gravity Control")]
+        [SerializeField] private Slider m_gravitySlider;
+        private float m_gravityMultiplierCount;
+        private float m_gravityMultiplier;
+        
+        #endregion
         
         private void Awake()
         {
+            GameManager.Instance.IsShowingShipInside = true;
             m_hangarRotation = m_hangar.transform.rotation;
         }
 
@@ -28,12 +38,10 @@ namespace LoadingBay
             m_gravitySlider.onValueChanged.AddListener(delegate { CargoGravityChange(); });
         }
 
-
+ 
         private void CargoGravityChange()
         {
-
-            Physics2D.gravity = new Vector2(0, m_gravitySlider.value * m_gravityMultiplier);
-
+            Physics2D.gravity = new Vector2(0, m_gravitySlider.value);
         }
 
         private void HangarRotationChange()

@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/LoadingCargeShipInside.unity
+    guid: 0dbe65eb9bacfd94aad973601c5405a7
+  - enabled: 1
+    path: Assets/Scenes/SpaceshipStartSequence.unity
+    guid: 9c090a0b2dfb89b4283c2f99e512ca06
+  - enabled: 1
+    path: Assets/Scenes/Battle_Scene.unity
+    guid: 0048adaf1a5dc1a4ebd626e01fe1aaa3
   m_configObjects: {}

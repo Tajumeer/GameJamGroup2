@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LoadingBay
 {
@@ -26,7 +27,7 @@ namespace LoadingBay
             if (m_isFullyLoaded)
             {
                 Debug.Log("Puzzle solved!");
-                //TODO: Change into drag puzzle
+                SceneManager.LoadScene("LoadingCargeShipInside");
             }
         }
     }

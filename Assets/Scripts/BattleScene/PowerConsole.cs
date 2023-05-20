@@ -28,6 +28,8 @@ public class PowerConsole : BaseInteractable
     {
         m_audioSource.clip = DataAsset.HoverSound;
         m_audioSource.Play();
+
+        m_hoverTextDisplay.RequestUpdateHoverText(m_dataAsset.ObjectName + "\n" + m_dataAsset.Description);
         return true;
     }
 

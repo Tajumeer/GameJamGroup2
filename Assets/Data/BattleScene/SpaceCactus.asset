@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpaceCactus
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: fd1bcd25f21057f44a63bbc32ff4aedd, type: 3}
-  m_objectName: Space
+  m_objectName: SpaceCactus
   m_description: Just a Cactus having an Adventure
   m_hoverSound: {fileID: 8300000, guid: c319857ce9b19d844a3cbcc3a607ba50, type: 3}
   m_wrongInteractSound:

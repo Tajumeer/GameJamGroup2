@@ -19,9 +19,16 @@ public class ToyGun : BaseInteractable
             InteractablesManager.currInteractable = this;
             Debug.Log(InteractablesManager.currInteractable.DataAsset.ObjectName);
         }
-        else if(InteractablesManager.currInteractable.DataAsset.ObjectName == "PirateShip" && InteractablesManager.windowIsEjected)
+        else if(InteractablesManager.currInteractable.DataAsset.ObjectName == "PirateShip" && 
+                InteractablesManager.windowIsEjected &&
+                InteractablesManager.toyAmmoIsCollected)
         {
-            
+            InteractionSuccessful();
+        }
+        else
+        {
+            InteractionWrong();
+            InteractablesManager.currInteractable = null;
         }
         return true;
     }
@@ -42,6 +49,7 @@ public class ToyGun : BaseInteractable
 
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
 
+        InteractablesManager.currInteractable = null;
         InteractablesManager.DestroyPirateShip();
         return true;
     }

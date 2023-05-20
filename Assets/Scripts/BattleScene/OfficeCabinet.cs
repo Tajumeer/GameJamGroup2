@@ -14,7 +14,20 @@ public class OfficeCabinet : BaseInteractable
 
     public override bool Interact()
     {
-        InteractionWrong();
+        if (InteractablesManager.currInteractable == null)
+        {
+            InteractablesManager.currInteractable = this;
+            Debug.Log(InteractablesManager.currInteractable);
+        }
+        else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "Torpedorohr")
+        {
+            InteractionSuccessful();
+        }
+        else
+        {
+            InteractionWrong();
+            InteractablesManager.currInteractable = null;
+        }
         return true;
     }
 
@@ -24,6 +37,16 @@ public class OfficeCabinet : BaseInteractable
         m_audioSource.Play();
 
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.WrongInteractSound.Text);
-        return true;
+        return false;
+    }
+
+    public override bool InteractionSuccessful()
+    {
+        m_audioSource.clip = DataAsset.SuccesfulInteractSound.AudioClip;
+        m_audioSource.Play();
+        InteractablesManager.toyAmmoIsCollected = true;
+
+        m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
+        return true;    
     }
 }

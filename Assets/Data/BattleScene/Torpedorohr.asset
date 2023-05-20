@@ -18,7 +18,7 @@ MonoBehaviour:
   m_hoverSound: {fileID: 8300000, guid: c319857ce9b19d844a3cbcc3a607ba50, type: 3}
   m_wrongInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: Torpedon't do this!
+    m_text: It won't open, where did you put that key?
   m_succesfulInteractSound:
     m_audioClip: {fileID: 0}
-    m_text: Torpedolauncher loaded!
+    m_text: Perfect! You found Ammo for your Toy-Gun

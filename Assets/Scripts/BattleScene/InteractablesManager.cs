@@ -9,6 +9,7 @@ public class InteractablesManager : MonoBehaviour
     public static InteractablesManager interactablesManager;
     public static bool powerIsConverted = false;
     public static bool windowIsEjected = false;
+    public static bool toyAmmoIsCollected = false;
     public static BaseInteractable currInteractable;
 
     

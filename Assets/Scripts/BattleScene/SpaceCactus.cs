@@ -21,7 +21,9 @@ public class SpaceCactus : BaseInteractable
             InteractablesManager.currInteractable = this;
             Debug.Log(InteractablesManager.currInteractable);
         }
-        else if(InteractablesManager.currInteractable.DataAsset.ObjectName == "Toy-Gun" && InteractablesManager.windowIsEjected)
+        else if(InteractablesManager.currInteractable.DataAsset.ObjectName == "Toy-Gun" && 
+                InteractablesManager.windowIsEjected &&
+                InteractablesManager.toyAmmoIsCollected)
         {
             InteractionSuccessful();
         }
@@ -48,6 +50,7 @@ public class SpaceCactus : BaseInteractable
         m_audioSource.Play();
 
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.SuccesfulInteractSound.Text);
+        InteractablesManager.currInteractable = null;
         InteractablesManager.DestroyPirateShip();
         return true;
     }

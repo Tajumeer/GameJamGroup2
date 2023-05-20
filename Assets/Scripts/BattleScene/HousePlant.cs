@@ -20,6 +20,10 @@ public class HousePlant : BaseInteractable
             InteractablesManager.currInteractable = this;
             Debug.Log(InteractablesManager.currInteractable);
         }
+        else if(InteractablesManager.currInteractable.DataAsset.ObjectName == "BioHazardSpray")
+        {
+            InteractionSuccessful();
+        }
         else
         {
             InteractionWrong();
@@ -34,6 +38,12 @@ public class HousePlant : BaseInteractable
         m_audioSource.Play();
 
         m_interactionTextDisplay.UpdateInteractionText(DataAsset.WrongInteractSound.Text);
+        return true;
+    }
+
+    public override bool InteractionSuccessful()
+    {
+        InteractablesManager.currInteractable = null;
         return true;
     }
 }

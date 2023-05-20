@@ -13,7 +13,9 @@ public class PirateShip : BaseInteractable
             InteractablesManager.currInteractable = this;
             Debug.Log(InteractablesManager.currInteractable);
         }
-        else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "Toy-Gun" && InteractablesManager.windowIsEjected)
+        else if (InteractablesManager.currInteractable.DataAsset.ObjectName == "Toy-Gun" && 
+                 InteractablesManager.windowIsEjected &&
+                 InteractablesManager.toyAmmoIsCollected)
         {
             InteractionSuccessful();
         }
